@@ -117,19 +117,7 @@ sourceSets.main.resources {
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
 
-    if (findProject(':SophisticatedCore') != null) {
-        implementation project(':SophisticatedCore')
-    } else {
-        compileOnly fg.deobf("sophisticatedcore:sophisticatedcore:${sc_version}") {
-            transitive = false
-        }
-        runtimeOnly fg.deobf("sophisticatedcore:sophisticatedcore:${sc_version}") {
-            transitive = false
-        }
-        testImplementation fg.deobf("sophisticatedcore:sophisticatedcore:${sc_version}") {
-            transitive = false
-        }
-    }
+    implementation fg.deobf("curse.maven:sophisticated-core-618298:5870031")
 
     compileOnly fg.deobf("mezz.jei:jei-${jei_mc_version}:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_mc_version}:${jei_version}")
